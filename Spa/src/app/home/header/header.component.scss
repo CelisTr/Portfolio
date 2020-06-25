@@ -1,0 +1,114 @@
+@import '../../../styles_variables.scss';
+
+@keyframes lefttoRight {
+    0% {
+        transform: translateX(-2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes righttoLeft {
+    0% {
+        transform: translateX(2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            rgba($lightBlue, 0.8), rgba($darkBlue, 0.8)),
+        url('../../../assets/header/header__background.jpeg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+    position: relative; // To Locate Logo
+
+    &__logo {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+
+        @media (max-width: 600px) {
+            top: 2rem;
+            left: 2rem;
+        }
+
+        &--icon {
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+
+    &__box {
+
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        &__content {
+            color: $titlesColor;
+            &--title {
+                text-transform: uppercase;
+                display: block;
+                text-align: center;
+                font-size: 6rem;
+                font-weight: 400;
+                letter-spacing: 2.4rem;
+
+                animation: lefttoRight 0.8s ease-out;
+        }
+
+            &--sub {
+                display: block;
+                text-align: center;
+                font-size: 3rem;
+                font-weight: 400;
+                letter-spacing: .6rem;
+                margin-bottom: 4rem;
+
+                animation: righttoLeft 0.8s ease-out;
+            }
+        }
+        
+        &__btn {
+            &:link, :visited {
+                text-transform: uppercase;
+                text-decoration: none;
+                color: black;
+                border-radius: 10rem;
+                padding: 1.5rem 4rem; // LR TB
+                display: inline-block;
+                transition: all .2s;
+            }
+
+            &:hover {
+                transform: translateY(-.3rem);
+                box-shadow: 0 1rem 2rem rgba(black, .4);
+            }
+
+            &:active {
+                transform: translateY(-.1rem);
+                box-shadow: 0 .4rem 1rem rgba(black, .2);
+            }
+
+            &--white {
+                background-color: white;
+            }
+
+        }
+    }
+}
