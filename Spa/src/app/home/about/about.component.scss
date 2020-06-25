@@ -1,0 +1,82 @@
+@import '../../../styles_variables.scss';
+@import '../../../styles_grids.scss';
+
+.about {
+    background-color: $grayBg;
+    padding: 25rem 0;
+    margin-top: -20vh;
+
+    &__content {
+
+        text-align: center;
+
+        &--title {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: .6rem;
+
+            display: inline-block;
+            background-image: linear-gradient(to right bottom, rgba($lightBlue, 0.8), rgba($darkBlue, 0.8));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    }
+
+    &__grid {
+        margin-top: 2rem;
+
+        &__data {
+
+            &--title {
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+                color: black;
+                font-weight: 700;
+            }
+    
+            &--text {
+                color: black;
+    
+                &:not(:last-child){
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        &__imgs {
+            position: relative;
+            margin-top: 4rem;
+            &__photo {
+                width: 55%;
+                box-shadow: 0 1.5rem 4rem rgba(black, .4);
+                border-radius: .2rem;
+                position: absolute;
+                z-index: 10;
+                outline-offset: 2rem;
+                
+                transition: all .2s ease-out;
+
+                &:hover {
+                    outline: .8rem solid $lightBlue;
+                    transform: scale(1.05);
+                    box-shadow: 0 2.5rem 4rem rgba(black, .6);
+                    z-index: 20;
+                }
+
+                &--p1 {
+                    background-color: white;
+                    left: 0;
+                    top: -2rem; 
+                }
+
+                &--p2 {
+                    background-color: white;
+                    right: 0;
+                    top: 10rem;
+                }
+            }
+        }
+    }
+}

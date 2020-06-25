@@ -9,6 +9,7 @@
 }
 
 .row-2cols {
+    margin-left: $horizontal-space;
     max-width: $gridWidth;
     
     &:not(:last-child){
@@ -87,4 +88,5 @@
         width: calc((100% - 3 * #{$horizontal-space}) / 4);
         float: right;
     }
+    
 }
