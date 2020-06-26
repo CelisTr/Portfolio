@@ -7,14 +7,13 @@
 }
 
 html {
-    font-size: 62.5%; // Makes 1rem 10px
-
-    // 0px - 600px
-    @media (max-width: 700px) {
+    font-size: 62.5%;
+    
+    @media (max-width: 43.75em) { // 700px
         font-size: 50%;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 23.44em) { // 375px
         font-size: 40%;
     }
 
